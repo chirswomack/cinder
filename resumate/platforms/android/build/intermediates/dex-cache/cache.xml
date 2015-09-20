@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<items version="2" >
+
+    <item
+        jar="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/libs/widgets.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="dab3994e6354b233885a2834673e6fc968347762">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/widgets-01e459b136a4b7f0ec9800bab8c7c984b3d3fd06.jar" />
+    </item>
+    <item
+        jar="/usr/local/Cellar/android-sdk/24.3.4/extras/android/m2repository/com/android/support/support-annotations/22.2.1/support-annotations-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="61a0ff5c29295ec56d7e0bd3d25d95dbf71b4b2b">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/support-annotations-22.2.1-4cd7bd1be56baa5f8cf0d590be58bc6b3b942e2b.jar" />
+    </item>
+    <item
+        jar="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/exploded-aar/com.android.support/appcompat-v7/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="4486e953d1f35f8ccab098b1dd67146366d5f731">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/classes-957bf8091b3906bcfac62698abd6635cb3c24cc0.jar" />
+    </item>
+    <item
+        jar="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/libs/nativescript.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="67b373dcc4118eeaa58a606b21684f016f79d1b0">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/nativescript-cd58d80ae6ffa9b8c6ae1ec7418a41475b4b021b.jar" />
+    </item>
+    <item
+        jar="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/classes.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="f8efd0096475e0daf054267b61544e10dc776503">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/classes-abe217d12aaa04a18778d42ac44a01cc07cd2492.jar" />
+    </item>
+    <item
+        jar="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/exploded-aar/com.android.support/support-v4/22.2.1/jars/libs/internal_impl-22.2.1.jar"
+        jumboMode="false"
+        revision="22.0.1"
+        sha1="c471eaaba13ff64f6e0383d1c30a9cdc9a97efeb">
+        <dex dex="/Users/christopherwomack/HackMIT/cinder/resumate/platforms/android/build/intermediates/pre-dexed/debug/internal_impl-22.2.1-c368a5358acdfe2050eb72dc475d7245d518722f.jar" />
+    </item>
+
+</items>

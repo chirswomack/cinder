@@ -1,0 +1,9 @@
+<Page>
+	<StackLayout orientation="vertical">
+		<TextField hint="Username" />
+		<TextField hint="Password" secure="true" />
+
+		<Button text="Log in" />
+		<Button text="First time here? Sign up" cssClass="link" />
+	</StackLayout>
+</Page>
