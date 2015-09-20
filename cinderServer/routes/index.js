@@ -132,7 +132,7 @@ router.post("/dashboardInfo",function(req,res,next){
 	}
 	else {
 		employerModel.findOne({username:req.body.username},function(error,employerData){
-			applicantModel.findOne({industry:employerData,
+			applicantModel.findOne({industry:employerData.industry,
 									positionType:{$in:employerData.positionType}
 								}).nin("username",employerData.applicantsAccepted)
 									.nin("username",employerData.applicantsRejected)
