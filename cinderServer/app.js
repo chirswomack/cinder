@@ -4,6 +4,14 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://heroku_5vs42lzg:cq1dcfotkg2ofmbtgh1nr007m9@ds051523.mongolab.com:51523/heroku_5vs42lzg')
+var db = mongoose.connection;
+db.on('error',console.error.bind(console,'connection error:'));
+db.once('open',function(callback){
+    console.log("Connected to database!");
+});
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
