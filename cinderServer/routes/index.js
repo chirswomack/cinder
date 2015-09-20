@@ -40,13 +40,14 @@ router.post('/signUp', function(req, res, next) {
 				var newEmployerModel = new employerModel({
 					username:req.body.username,
 					password:req.body.password,
-					companyName:String,
-					description:String,
-					location:String,
-					email:String,
-					positionType:[String],
-					applicantsRejected:[String],
-					applicantsAccepted:[String]
+					companyName:"",
+					description:"",
+					location:"",
+					email:"",
+					industry:"",
+					positionType:[],
+					applicantsRejected:[],
+					applicantsAccepted:[]
 				});
 				newEmployerModel.save(function(error){
 					res.send("signUpSuccess");
@@ -73,7 +74,7 @@ router.post("/login",function(req,res,next){
 });
 
 router.post("/updateProfileApplicant",function(req,res,next){
-	applicantModel.update({username:req.body.username
+	applicantModel.findOneAndUpdate({username:req.body.username
 							},{fullName:req.body.fullName,
 								email:req.body.email,
 								age:req.body.age,
@@ -83,13 +84,13 @@ router.post("/updateProfileApplicant",function(req,res,next){
 								bio:req.body.bio,
 								positionType:req.body.positionType,
 								industry:req.body.industry
-							},function(error){
+							},{upsert:true},function(error,data){
 								res.send("updateProfileApplicantSuccess")
 							});
 });
 
 router.post("/updateProfileCompany",function(req,res,next){
-	employerModel.update({username:req.body.username
+	employerModel.findOneAndUpdate({username:req.body.username
 							},{
 								companyName:req.body.companyName,
 								industry:req.body.industry,
@@ -97,14 +98,18 @@ router.post("/updateProfileCompany",function(req,res,next){
 								location:req.body.location,
 								email:req.body.email,
 								positionType:req.body.positionType
-						},function(error){
+						},{upsert:true},function(error){
 							res.send("updateProfileCompanySuccess");
 						});
 });
 
 router.post("/dashboardInfo",function(req,res,next){
 	if (req.body.userType==="applicant"){
-		applicantModel.findOne({username:req.body.user},function(error,applicantData){
+		applicantModel.findOne({username:req.body.username},function(error,applicantData){
+			// employerModel.find({industry:applicantData.industry,
+			// 						positionType:applicantData.positionType},function(err,data){
+			// 	console.log(data);
+			// })
 			employerModel.findOne({industry:applicantData.industry,
 									positionType:applicantData.positionType
 								}).nin("username",applicantData.companiesRejected)
@@ -172,18 +177,29 @@ router.post("/dashboardSwipeRight",function(req,res,next){
 		applicantModel.findOneAndUpdate({username:req.body.username},{
 			$push:{companiesAccepted:req.body.matchName}
 		},function(error,applicantData){
-			applicantModel.findOne({username:matchName},function(error,matchData){
-				if (matchData.companiesAccepted.indexOf(req.body.username)>-1){
+			employerModel.findOne({username:req.body.username},function(error,matchData){
+				if (matchData.applicantsAccepted.indexOf(req.body.username)>-1){
 					res.send("emailsSent");
 				}
 				else {
-					res.send("noEmailSent")
+					res.send("noEmailsSent");
 				}
 			});
 		});
 	}
 	else {
-		
+		employerModel.findOneAndUpdate({username:req.body.username},{
+			$push:{applicantsAccepted:req.body.matchName}
+		},function(error,employerData){
+			applicantModel.findOne({username:matchName},function(error,matchData){
+				if (matchData.companiesAccepted.indexOf(req.body.username)>-1){
+					res.send("emailsSent");
+				}
+				else {
+					res.send("noEmailsSent");
+				}
+			})
+		});
 	}
 })
 

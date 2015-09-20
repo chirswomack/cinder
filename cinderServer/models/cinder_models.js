@@ -25,6 +25,7 @@ var employerSchema = mongoose.Schema({
 	description:String,
 	location:String,
 	email:String,
+	industry:String,
 	positionType:[String],
 	applicantsRejected:[String],
 	applicantsAccepted:[String]
