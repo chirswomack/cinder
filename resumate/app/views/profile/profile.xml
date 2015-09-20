@@ -3,7 +3,7 @@
 		<ListView items="{{ inputFields }}">
 			<ListView.itemTemplate>
 				<!-- <Label text="{{ name }}" /> -->
-				<TextField hint="{{ helpText }}" />
+				<TextField hint="{{ helpText }}" id="{{ name }}" />
 			</ListView.itemTemplate>
 		</ListView>
 	</StackLayout>

@@ -6,14 +6,14 @@ var page;
 
 var pageData = new observableModule.Observable({
     inputFields: new observableArrayModule.ObservableArray([
-        { name: "Full Name", helpText: "Jane Doe" },
-        { name: "Email", helpText: "example@mit.edu" },
-        { name: "Age", helpText: "19"},
-        { name: "Academic", helpText: "Highest Institution Attended"},
-        { name: "Last Job", helpText: "Intern at Google"},
-        { name: "Location", helpText: "Cambridge, MA"},
-        { name: "Bio", helpText: "Tell us about yourself"},
-        { name: "Industry", helpText: "Software"}
+        { name: "name", helpText: "Jane Doe" },
+        { name: "email", helpText: "example@mit.edu" },
+        { name: "age", helpText: "19"},
+        { name: "academic", helpText: "Highest Institution Attended"},
+        { name: "jobHistory", helpText: "Intern at Google"},
+        { name: "location", helpText: "Cambridge, MA"},
+        { name: "bio", helpText: "Tell us about yourself"},
+        { name: "industry", helpText: "Software"}
     ])
 });
 

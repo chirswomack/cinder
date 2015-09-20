@@ -1,4 +1,5 @@
 var http = require("http");
+var info = [];
 
 exports.loaded = function(args) {
     var page = args.object;
@@ -8,16 +9,16 @@ exports.loaded = function(args) {
 	    url: "http://10.0.3.2:3000/dashboardInfo",
 	    method: "POST",
 	    headers: { "Content-Type": "application/json" },
-	    content: { username: page.navigationContext.username, userType: page.navigationContext.userType }
+	    content: JSON.stringify({ username: "Smith", userType: "applicant" })
 	}).then(function (response) {
 	    result = response.content;
-	    var info = [];
 	    if (result === "noMoreMatches") {
 	    	alert("Sorry, we can't find any matches for you at this time.");
 	    } else {
 	    	for (var i in result) {
 	    		info.push(result[i]);
 	    	}
+	    	console.log(info);
 	    }
 	}, function (e) {
 	    alert("Error occurred " + e);
