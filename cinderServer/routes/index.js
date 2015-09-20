@@ -36,9 +36,39 @@ router.post('/signUp', function(req, res, next) {
 					res.send("signUpSuccess");
 				});
 			}
-
+			else {
+				var newEmployerModel = new employerModel({
+					username:req.body.username,
+					password:req.body.password,
+					companyName:String,
+					description:String,
+					location:String,
+					email:String,
+					positionType:[String],
+					applicantsRejected:[String],
+					applicantsAccepted:[String]
+				});
+				newEmployerModel.save(function(error){
+					res.send("signUpSuccess");
+				});
+			}
 		}
 	})
 })
 
+router.post("/login",function(req,res,next){
+	applicantModel.findOne({username:req.body.username,password:req.body.password},function(error,applicantData){
+		employerModel.findOne({username:req.body.username,password:req.body.password},function(error,employerData){
+			if (applicantData){
+				res.send({isUser:true,userType:"applicant"});
+			}
+			else if (employerData){
+				res.send({isUser:true,userType:"employer"});
+			}
+			else {
+				res.send({isUser:false,userType:""});
+			}
+		});
+	});
+});
 module.exports = router;
