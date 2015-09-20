@@ -1,9 +1,9 @@
-<Page>
+<Page loaded="loaded">
 	<StackLayout orientation="vertical">
-		<TextField hint="Username" />
-		<TextField hint="Password" secure="true" />
+		<TextField id="login-username" hint="Username" />
+		<TextField id="login-password" hint="Password" secure="true" />
 
-		<Button text="Log in" />
-		<Button text="First time here? Sign up" cssClass="link" />
+		<Button text="LOG IN" tap="login" />
+		<Button text="FIRST TIME HERE? REGISTER" cssClass="register-link" tap="register" />
 	</StackLayout>
 </Page>

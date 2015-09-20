@@ -1,0 +1,6 @@
+<Page loaded="loaded">
+	<StackLayout>
+		<ListView items="{{ info }}">
+		</ListView>
+	</StackLayout>
+</Page>

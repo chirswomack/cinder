@@ -1,0 +1,10 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<ListView items="{{ inputFields }}">
+			<ListView.itemTemplate>
+				<!-- <Label text="{{ name }}" /> -->
+				<TextField hint="{{ helpText }}" />
+			</ListView.itemTemplate>
+		</ListView>
+	</StackLayout>
+</Page>

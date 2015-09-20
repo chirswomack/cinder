@@ -1,0 +1,8 @@
+<Page loaded="loaded">
+	<StackLayout orientation="vertical">
+		<ListPicker id="userType" items="{{ userTypes }}" selectedIndex="{{ index }}" />
+		<TextField id="username" hint="Username" />
+		<TextField id="password" hint="Password" secure="true" />
+		<Button text="SIGN UP" tap="signUp" />
+	</StackLayout>
+</Page>
